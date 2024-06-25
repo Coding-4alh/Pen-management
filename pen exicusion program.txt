@@ -1,0 +1,878 @@
+simport java.util.Map;
+import java.util.Scanner;
+
+public class PenFactoryManagement {
+
+    private Map<String, Integer> penStock; // Map to store pen colors and their quantities
+
+    public PenFactoryManagement() {
+        penStock = new HashMap<>();
+    }
+
+    // Method to add pens to the stock
+    public void addPens(String color, int quantity) {
+        penStock.put(color, penStock.getOrDefault(color, 0) + quantity);
+        System.out.println(quantity + " " + color + " pens added to stock.");
+    }
+
+    // Method to remove pens from the stock
+    public void removePens(String color, int quantity) {
+        if (penStock.containsKey(color)) {
+            int currentStock = penStock.get(color);
+            if (currentStock >= quantity) {
+                penStock.put(color, currentStock - quantity);
+                System.out.println(quantity + " " + color + " pens removed from stock.");
+            } else {
+                System.out.println("Insufficient stock of " + color + " pens.");
+            }
+        } else {
+            System.out.println("No stock of " + color + " pens.");
+        }
+    }
+
+    // Method to check the stock of pens of a specific color
+    public void checkStock(String color) {
+        if (penStock.containsKey(color)) {
+            System.out.println("Stock of " + color + " pens: " + penStock.get(color));
+        } else {
+            System.out.println("No stock of " + color + " pens.");
+        }
+    }
+
+    public static void main(String[] args) {
+        PenFactoryManagement factory = new PenFactoryManagement();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPen Factory Management System");
+            System.out.println("1. Add Pens");
+            System.out.println("2. Remove Pens");
+            System.out.println("3. Check Stock");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter color of pen to add: ");
+                    String addColor = scanner.next();
+                    System.out.print("Enter quantity to add: ");
+                    int addQuantity = scanner.nextInt();
+                    factory.addPens(addColor, addQuantity);
+                    break;
+                case 2:
+                    System.out.print("Enter color of pen to remove: ");
+                    String removeColor = scanner.next();
+                    System.out.print("Enter quantity to remove: ");
+                    int removeQuantity = scanner.nextInt();
+                    factory.removePens(removeColor, removeQuantity);
+                    break;
+                case 3:
+                    System.out.print("Enter color of pen to check stock: ");
+                    String checkColor = scanner.next();
+                    factory.checkStock(checkColor);
+                    break;
+                case 4:
+                    System.out.println("Exiting...");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+            }
+        }
+    }
+}
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class PenMarketing {
+
+    private Map<String, Double> penPrices; // Map to store pen types and their prices
+    private Map<String, Double> penDiscounts; // Map to store pen types and their discounts
+
+    public PenMarketing() {
+        penPrices = new HashMap<>();
+        penDiscounts = new HashMap<>();
+    }
+
+    // Method to set the price of a pen type
+    public void setPenPrice(String type, double price) {
+        penPrices.put(type, price);
+        System.out.println("Price for " + type + " pen set to 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class PenFactoryManagement {
+
+    private Map<String, Integer> penStock; // Map to store pen colors and their quantities
+
+    public PenFactoryManagement() {
+        penStock = new HashMap<>();
+    }
+
+    // Method to add pens to the stock
+    public void addPens(String color, int quantity) {
+        penStock.put(color, penStock.getOrDefault(color, 0) + quantity);
+        System.out.println(quantity + " " + color + " pens added to stock.");
+    }
+
+    // Method to remove pens from the stock
+    public void removePens(String color, int quantity) {
+        if (penStock.containsKey(color)) {
+            int currentStock = penStock.get(color);
+            if (currentStock >= quantity) {
+                penStock.put(color, currentStock - quantity);
+                System.out.println(quantity + " " + color + " pens removed from stock.");
+            } else {
+                System.out.println("Insufficient stock of " + color + " pens.");
+            }
+        } else {
+            System.out.println("No stock of " + color + " pens.");
+        }
+    }
+
+    // Method to check the stock of pens of a specific color
+    public void checkStock(String color) {
+        if (penStock.containsKey(color)) {
+            System.out.println("Stock of " + color + " pens: " + penStock.get(color));
+        } else {
+            System.out.println("No stock of " + color + " pens.");
+        }
+    }
+
+    public static void main(String[] args) {
+        PenFactoryManagement factory = new PenFactoryManagement();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPen Factory Management System");
+            System.out.println("1. Add Pens");
+            System.out.println("2. Remove Pens");
+            System.out.println("3. Check Stock");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter color of pen to add: ");
+                    String addColor = scanner.next();
+                    System.out.print("Enter quantity to add: ");
+                    int addQuantity = scanner.nextInt();
+                    factory.addPens(addColor, addQuantity);
+                    break;
+                case 2:
+                    System.out.print("Enter color of pen to remove: ");
+                    String removeColor = scanner.next();
+                    System.out.print("Enter quantity to remove: ");
+                    int removeQuantity = scanner.nextInt();
+                    factory.removePens(removeColor, removeQuantity);
+                    break;
+                case 3:
+                    System.out.print("Enter color of pen to check stock: ");
+                    String checkColor = scanner.next();
+                    factory.checkStock(checkColor);
+                    break;
+                case 4:
+                    System.out.println("Exiting...");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+            }
+        }
+    }
+}
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class PenMarketing {
+
+    private Map<String, Double> penPrices; // Map to store pen types and their prices
+    private Map<String, Double> penDiscounts; // Map to store pen types and their discounts
+
+    public PenMarketing() {
+        penPrices = new HashMap<>();
+        penDiscounts = new HashMap<>();
+    }
+
+    // Method to set the price of a pen type
+    public void setPenPrice(String type, double price) {
+        penPrices.put(type, price);
+        System.out.println("Price for " + type + " pen set to $" + price);
+    }
+
+    // Method to set the discount for a pen type
+    public void setPenDiscount(String type, double discount) {
+        penDiscounts.put(type, discount);
+        System.out.println("Discount for " + type + " pen set to " + discount + "%");
+    }
+
+    // Method to calculate the discounted price for a pen type
+    public double calculateDiscountedPrice(String type) {
+        if (penPrices.containsKey(type) && penDiscounts.containsKey(type)) {
+            double price = penPrices.get(type);
+            double discount = penDiscounts.get(type);
+            return price - (price * (discount / 100.0));
+        } else {
+            System.out.println("Pen type " + type + " not found or discount not set.");
+            return -1; // Return -1 to indicate error
+        }
+    }
+
+    // Method to display all pen types and their prices
+    public void displayPenPrices() {
+        if (penPrices.isEmpty()) {
+            System.out.println("No pen types available.");
+        } else {
+            System.out.println("Pen Types and Prices: ");
+            for (Map.Entry<String, Double> entry : penPrices.entrySet()) {
+                System.out.println(entry.getKey() + ": $" + entry.getValue());
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        PenMarketing marketing = new PenMarketing();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPen Marketing System");
+            System.out.println("1. Set Pen Price");
+            System.out.println("2. Set Pen Discount");
+            System.out.println("3. Calculate Discounted Price");
+            System.out.println("4. Display Pen Prices");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter pen type: ");
+                    String type = scanner.next();
+                    System.out.print("Enter price for " + type + " pen: $");
+                    double price = scanner.nextDouble();
+                    marketing.setPenPrice(type, price);
+                    break;
+                case 2:
+                    System.out.print("Enter pen type: ");
+                    String typeForDiscount = scanner.next();
+                    System.out.print("Enter discount percentage for " + typeForDiscount + " pen: ");
+                    double discount = scanner.nextDouble();
+                    marketing.setPenDiscount(typeForDiscount, discount);
+                    break;
+                case 3:
+                    System.out.print("Enter pen type to calculate discounted price: ");
+                    String typeToCalculate = scanner.next();
+                    double discountedPrice = marketing.calculateDiscountedPrice(typeToCalculate);
+                    if (discountedPrice != -1) {
+                        System.out.println("Discounted price for " + typeToCalculate + " pen: $" + discountedPrice);
+                    }
+                    break;
+                case 4:
+                    marketing.displayPenPrices();
+                    break
+quot; + price);
+    }
+
+    // Method to set the discount for a pen type
+    public void setPenDiscount(String type, double discount) {
+        penDiscounts.put(type, discount);
+        System.out.println("Discount for " + type + " pen set to " + discount + "%");
+    }
+
+    // Method to calculate the discounted price for a pen type
+    public double calculateDiscountedPrice(String type) {
+        if (penPrices.containsKey(type) && penDiscounts.containsKey(type)) {
+            double price = penPrices.get(type);
+            double discount = penDiscounts.get(type);
+            return price - (price * (discount / 100.0));
+        } else {
+            System.out.println("Pen type " + type + " not found or discount not set.");
+            return -1; // Return -1 to indicate error
+        }
+    }
+
+    // Method to display all pen types and their prices
+    public void displayPenPrices() {
+        if (penPrices.isEmpty()) {
+            System.out.println("No pen types available.");
+        } else {
+            System.out.println("Pen Types and Prices: ");
+            for (Map.Entry<String, Double> entry : penPrices.entrySet()) {
+                System.out.println(entry.getKey() + ": 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class PenFactoryManagement {
+
+    private Map<String, Integer> penStock; // Map to store pen colors and their quantities
+
+    public PenFactoryManagement() {
+        penStock = new HashMap<>();
+    }
+
+    // Method to add pens to the stock
+    public void addPens(String color, int quantity) {
+        penStock.put(color, penStock.getOrDefault(color, 0) + quantity);
+        System.out.println(quantity + " " + color + " pens added to stock.");
+    }
+
+    // Method to remove pens from the stock
+    public void removePens(String color, int quantity) {
+        if (penStock.containsKey(color)) {
+            int currentStock = penStock.get(color);
+            if (currentStock >= quantity) {
+                penStock.put(color, currentStock - quantity);
+                System.out.println(quantity + " " + color + " pens removed from stock.");
+            } else {
+                System.out.println("Insufficient stock of " + color + " pens.");
+            }
+        } else {
+            System.out.println("No stock of " + color + " pens.");
+        }
+    }
+
+    // Method to check the stock of pens of a specific color
+    public void checkStock(String color) {
+        if (penStock.containsKey(color)) {
+            System.out.println("Stock of " + color + " pens: " + penStock.get(color));
+        } else {
+            System.out.println("No stock of " + color + " pens.");
+        }
+    }
+
+    public static void main(String[] args) {
+        PenFactoryManagement factory = new PenFactoryManagement();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPen Factory Management System");
+            System.out.println("1. Add Pens");
+            System.out.println("2. Remove Pens");
+            System.out.println("3. Check Stock");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter color of pen to add: ");
+                    String addColor = scanner.next();
+                    System.out.print("Enter quantity to add: ");
+                    int addQuantity = scanner.nextInt();
+                    factory.addPens(addColor, addQuantity);
+                    break;
+                case 2:
+                    System.out.print("Enter color of pen to remove: ");
+                    String removeColor = scanner.next();
+                    System.out.print("Enter quantity to remove: ");
+                    int removeQuantity = scanner.nextInt();
+                    factory.removePens(removeColor, removeQuantity);
+                    break;
+                case 3:
+                    System.out.print("Enter color of pen to check stock: ");
+                    String checkColor = scanner.next();
+                    factory.checkStock(checkColor);
+                    break;
+                case 4:
+                    System.out.println("Exiting...");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+            }
+        }
+    }
+}
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class PenMarketing {
+
+    private Map<String, Double> penPrices; // Map to store pen types and their prices
+    private Map<String, Double> penDiscounts; // Map to store pen types and their discounts
+
+    public PenMarketing() {
+        penPrices = new HashMap<>();
+        penDiscounts = new HashMap<>();
+    }
+
+    // Method to set the price of a pen type
+    public void setPenPrice(String type, double price) {
+        penPrices.put(type, price);
+        System.out.println("Price for " + type + " pen set to $" + price);
+    }
+
+    // Method to set the discount for a pen type
+    public void setPenDiscount(String type, double discount) {
+        penDiscounts.put(type, discount);
+        System.out.println("Discount for " + type + " pen set to " + discount + "%");
+    }
+
+    // Method to calculate the discounted price for a pen type
+    public double calculateDiscountedPrice(String type) {
+        if (penPrices.containsKey(type) && penDiscounts.containsKey(type)) {
+            double price = penPrices.get(type);
+            double discount = penDiscounts.get(type);
+            return price - (price * (discount / 100.0));
+        } else {
+            System.out.println("Pen type " + type + " not found or discount not set.");
+            return -1; // Return -1 to indicate error
+        }
+    }
+
+    // Method to display all pen types and their prices
+    public void displayPenPrices() {
+        if (penPrices.isEmpty()) {
+            System.out.println("No pen types available.");
+        } else {
+            System.out.println("Pen Types and Prices: ");
+            for (Map.Entry<String, Double> entry : penPrices.entrySet()) {
+                System.out.println(entry.getKey() + ": $" + entry.getValue());
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        PenMarketing marketing = new PenMarketing();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPen Marketing System");
+            System.out.println("1. Set Pen Price");
+            System.out.println("2. Set Pen Discount");
+            System.out.println("3. Calculate Discounted Price");
+            System.out.println("4. Display Pen Prices");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter pen type: ");
+                    String type = scanner.next();
+                    System.out.print("Enter price for " + type + " pen: $");
+                    double price = scanner.nextDouble();
+                    marketing.setPenPrice(type, price);
+                    break;
+                case 2:
+                    System.out.print("Enter pen type: ");
+                    String typeForDiscount = scanner.next();
+                    System.out.print("Enter discount percentage for " + typeForDiscount + " pen: ");
+                    double discount = scanner.nextDouble();
+                    marketing.setPenDiscount(typeForDiscount, discount);
+                    break;
+                case 3:
+                    System.out.print("Enter pen type to calculate discounted price: ");
+                    String typeToCalculate = scanner.next();
+                    double discountedPrice = marketing.calculateDiscountedPrice(typeToCalculate);
+                    if (discountedPrice != -1) {
+                        System.out.println("Discounted price for " + typeToCalculate + " pen: $" + discountedPrice);
+                    }
+                    break;
+                case 4:
+                    marketing.displayPenPrices();
+                    break
+quot; + entry.getValue());
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        PenMarketing marketing = new PenMarketing();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPen Marketing System");
+            System.out.println("1. Set Pen Price");
+            System.out.println("2. Set Pen Discount");
+            System.out.println("3. Calculate Discounted Price");
+            System.out.println("4. Display Pen Prices");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter pen type: ");
+                    String type = scanner.next();
+                    System.out.print("Enter price for " + type + " pen: 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class PenFactoryManagement {
+
+    private Map<String, Integer> penStock; // Map to store pen colors and their quantities
+
+    public PenFactoryManagement() {
+        penStock = new HashMap<>();
+    }
+
+    // Method to add pens to the stock
+    public void addPens(String color, int quantity) {
+        penStock.put(color, penStock.getOrDefault(color, 0) + quantity);
+        System.out.println(quantity + " " + color + " pens added to stock.");
+    }
+
+    // Method to remove pens from the stock
+    public void removePens(String color, int quantity) {
+        if (penStock.containsKey(color)) {
+            int currentStock = penStock.get(color);
+            if (currentStock >= quantity) {
+                penStock.put(color, currentStock - quantity);
+                System.out.println(quantity + " " + color + " pens removed from stock.");
+            } else {
+                System.out.println("Insufficient stock of " + color + " pens.");
+            }
+        } else {
+            System.out.println("No stock of " + color + " pens.");
+        }
+    }
+
+    // Method to check the stock of pens of a specific color
+    public void checkStock(String color) {
+        if (penStock.containsKey(color)) {
+            System.out.println("Stock of " + color + " pens: " + penStock.get(color));
+        } else {
+            System.out.println("No stock of " + color + " pens.");
+        }
+    }
+
+    public static void main(String[] args) {
+        PenFactoryManagement factory = new PenFactoryManagement();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPen Factory Management System");
+            System.out.println("1. Add Pens");
+            System.out.println("2. Remove Pens");
+            System.out.println("3. Check Stock");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter color of pen to add: ");
+                    String addColor = scanner.next();
+                    System.out.print("Enter quantity to add: ");
+                    int addQuantity = scanner.nextInt();
+                    factory.addPens(addColor, addQuantity);
+                    break;
+                case 2:
+                    System.out.print("Enter color of pen to remove: ");
+                    String removeColor = scanner.next();
+                    System.out.print("Enter quantity to remove: ");
+                    int removeQuantity = scanner.nextInt();
+                    factory.removePens(removeColor, removeQuantity);
+                    break;
+                case 3:
+                    System.out.print("Enter color of pen to check stock: ");
+                    String checkColor = scanner.next();
+                    factory.checkStock(checkColor);
+                    break;
+                case 4:
+                    System.out.println("Exiting...");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+            }
+        }
+    }
+}
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class PenMarketing {
+
+    private Map<String, Double> penPrices; // Map to store pen types and their prices
+    private Map<String, Double> penDiscounts; // Map to store pen types and their discounts
+
+    public PenMarketing() {
+        penPrices = new HashMap<>();
+        penDiscounts = new HashMap<>();
+    }
+
+    // Method to set the price of a pen type
+    public void setPenPrice(String type, double price) {
+        penPrices.put(type, price);
+        System.out.println("Price for " + type + " pen set to $" + price);
+    }
+
+    // Method to set the discount for a pen type
+    public void setPenDiscount(String type, double discount) {
+        penDiscounts.put(type, discount);
+        System.out.println("Discount for " + type + " pen set to " + discount + "%");
+    }
+
+    // Method to calculate the discounted price for a pen type
+    public double calculateDiscountedPrice(String type) {
+        if (penPrices.containsKey(type) && penDiscounts.containsKey(type)) {
+            double price = penPrices.get(type);
+            double discount = penDiscounts.get(type);
+            return price - (price * (discount / 100.0));
+        } else {
+            System.out.println("Pen type " + type + " not found or discount not set.");
+            return -1; // Return -1 to indicate error
+        }
+    }
+
+    // Method to display all pen types and their prices
+    public void displayPenPrices() {
+        if (penPrices.isEmpty()) {
+            System.out.println("No pen types available.");
+        } else {
+            System.out.println("Pen Types and Prices: ");
+            for (Map.Entry<String, Double> entry : penPrices.entrySet()) {
+                System.out.println(entry.getKey() + ": $" + entry.getValue());
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        PenMarketing marketing = new PenMarketing();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPen Marketing System");
+            System.out.println("1. Set Pen Price");
+            System.out.println("2. Set Pen Discount");
+            System.out.println("3. Calculate Discounted Price");
+            System.out.println("4. Display Pen Prices");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter pen type: ");
+                    String type = scanner.next();
+                    System.out.print("Enter price for " + type + " pen: $");
+                    double price = scanner.nextDouble();
+                    marketing.setPenPrice(type, price);
+                    break;
+                case 2:
+                    System.out.print("Enter pen type: ");
+                    String typeForDiscount = scanner.next();
+                    System.out.print("Enter discount percentage for " + typeForDiscount + " pen: ");
+                    double discount = scanner.nextDouble();
+                    marketing.setPenDiscount(typeForDiscount, discount);
+                    break;
+                case 3:
+                    System.out.print("Enter pen type to calculate discounted price: ");
+                    String typeToCalculate = scanner.next();
+                    double discountedPrice = marketing.calculateDiscountedPrice(typeToCalculate);
+                    if (discountedPrice != -1) {
+                        System.out.println("Discounted price for " + typeToCalculate + " pen: $" + discountedPrice);
+                    }
+                    break;
+                case 4:
+                    marketing.displayPenPrices();
+                    break
+quot;);
+                    double price = scanner.nextDouble();
+                    marketing.setPenPrice(type, price);
+                    break;
+                case 2:
+                    System.out.print("Enter pen type: ");
+                    String typeForDiscount = scanner.next();
+                    System.out.print("Enter discount percentage for " + typeForDiscount + " pen: ");
+                    double discount = scanner.nextDouble();
+                    marketing.setPenDiscount(typeForDiscount, discount);
+                    break;
+                case 3:
+                    System.out.print("Enter pen type to calculate discounted price: ");
+                    String typeToCalculate = scanner.next();
+                    double discountedPrice = marketing.calculateDiscountedPrice(typeToCalculate);
+                    if (discountedPrice != -1) {
+                        System.out.println("Discounted price for " + typeToCalculate + " pen: 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class PenFactoryManagement {
+
+    private Map<String, Integer> penStock; // Map to store pen colors and their quantities
+
+    public PenFactoryManagement() {
+        penStock = new HashMap<>();
+    }
+
+    // Method to add pens to the stock
+    public void addPens(String color, int quantity) {
+        penStock.put(color, penStock.getOrDefault(color, 0) + quantity);
+        System.out.println(quantity + " " + color + " pens added to stock.");
+    }
+
+    // Method to remove pens from the stock
+    public void removePens(String color, int quantity) {
+        if (penStock.containsKey(color)) {
+            int currentStock = penStock.get(color);
+            if (currentStock >= quantity) {
+                penStock.put(color, currentStock - quantity);
+                System.out.println(quantity + " " + color + " pens removed from stock.");
+            } else {
+                System.out.println("Insufficient stock of " + color + " pens.");
+            }
+        } else {
+            System.out.println("No stock of " + color + " pens.");
+        }
+    }
+
+    // Method to check the stock of pens of a specific color
+    public void checkStock(String color) {
+        if (penStock.containsKey(color)) {
+            System.out.println("Stock of " + color + " pens: " + penStock.get(color));
+        } else {
+            System.out.println("No stock of " + color + " pens.");
+        }
+    }
+
+    public static void main(String[] args) {
+        PenFactoryManagement factory = new PenFactoryManagement();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPen Factory Management System");
+            System.out.println("1. Add Pens");
+            System.out.println("2. Remove Pens");
+            System.out.println("3. Check Stock");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter color of pen to add: ");
+                    String addColor = scanner.next();
+                    System.out.print("Enter quantity to add: ");
+                    int addQuantity = scanner.nextInt();
+                    factory.addPens(addColor, addQuantity);
+                    break;
+                case 2:
+                    System.out.print("Enter color of pen to remove: ");
+                    String removeColor = scanner.next();
+                    System.out.print("Enter quantity to remove: ");
+                    int removeQuantity = scanner.nextInt();
+                    factory.removePens(removeColor, removeQuantity);
+                    break;
+                case 3:
+                    System.out.print("Enter color of pen to check stock: ");
+                    String checkColor = scanner.next();
+                    factory.checkStock(checkColor);
+                    break;
+                case 4:
+                    System.out.println("Exiting...");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+            }
+        }
+    }
+}
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class PenMarketing {
+
+    private Map<String, Double> penPrices; // Map to store pen types and their prices
+    private Map<String, Double> penDiscounts; // Map to store pen types and their discounts
+
+    public PenMarketing() {
+        penPrices = new HashMap<>();
+        penDiscounts = new HashMap<>();
+    }
+
+    // Method to set the price of a pen type
+    public void setPenPrice(String type, double price) {
+        penPrices.put(type, price);
+        System.out.println("Price for " + type + " pen set to $" + price);
+    }
+
+    // Method to set the discount for a pen type
+    public void setPenDiscount(String type, double discount) {
+        penDiscounts.put(type, discount);
+        System.out.println("Discount for " + type + " pen set to " + discount + "%");
+    }
+
+    // Method to calculate the discounted price for a pen type
+    public double calculateDiscountedPrice(String type) {
+        if (penPrices.containsKey(type) && penDiscounts.containsKey(type)) {
+            double price = penPrices.get(type);
+            double discount = penDiscounts.get(type);
+            return price - (price * (discount / 100.0));
+        } else {
+            System.out.println("Pen type " + type + " not found or discount not set.");
+            return -1; // Return -1 to indicate error
+        }
+    }
+
+    // Method to display all pen types and their prices
+    public void displayPenPrices() {
+        if (penPrices.isEmpty()) {
+            System.out.println("No pen types available.");
+        } else {
+            System.out.println("Pen Types and Prices: ");
+            for (Map.Entry<String, Double> entry : penPrices.entrySet()) {
+                System.out.println(entry.getKey() + ": $" + entry.getValue());
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        PenMarketing marketing = new PenMarketing();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nPen Marketing System");
+            System.out.println("1. Set Pen Price");
+            System.out.println("2. Set Pen Discount");
+            System.out.println("3. Calculate Discounted Price");
+            System.out.println("4. Display Pen Prices");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter pen type: ");
+                    String type = scanner.next();
+                    System.out.print("Enter price for " + type + " pen: $");
+                    double price = scanner.nextDouble();
+                    marketing.setPenPrice(type, price);
+                    break;
+                case 2:
+                    System.out.print("Enter pen type: ");
+                    String typeForDiscount = scanner.next();
+                    System.out.print("Enter discount percentage for " + typeForDiscount + " pen: ");
+                    double discount = scanner.nextDouble();
+                    marketing.setPenDiscount(typeForDiscount, discount);
+                    break;
+                case 3:
+                    System.out.print("Enter pen type to calculate discounted price: ");
+                    String typeToCalculate = scanner.next();
+                    double discountedPrice = marketing.calculateDiscountedPrice(typeToCalculate);
+                    if (discountedPrice != -1) {
+                        System.out.println("Discounted price for " + typeToCalculate + " pen: $" + discountedPrice);
+                    }
+                    break;
+                case 4:
+                    marketing.displayPenPrices();
+                    break
+quot; + discountedPrice);
+                    }
+                    break;
+                case 4:
+                    marketing.displayPenPrices();
+                    break
